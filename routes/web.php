@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KesenianController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Routing
-Route::get('/kesenian', [KesenianController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('kesenian/', [KesenianController::class, 'index']);
+// Route::get('/', function () {
+//     return view('kesenian/index');
+// });
