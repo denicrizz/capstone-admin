@@ -1,4 +1,7 @@
-<section class="section dashboard">
+@extends('../layout/admin')
+
+@section('main')
+    <section class="section dashboard">
         <div class="row">
             <!-- Left side columns -->
             <div class="col-lg-12">
@@ -15,4 +18,5 @@
                 </div>
             </div><!-- End Left side columns -->
         </div>
-</section>
+    </section>
+@endsection

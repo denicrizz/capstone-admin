@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KesenianController;
+use App\Http\Livewire\Admin\pelanggan\Pelanggan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Routing
-Route::get('/', [HomeController::class, 'index']);
+// Routing Route::get('/client', \App\Http\Livewire\Admin\Client\Index::class)->name('client.index');
+Route::get('admin/home', [HomeController::class, 'index']);
+
 Route::get('kesenian/', [KesenianController::class, 'index']);
+Route::get('kesenian/create', [KesenianController::class, 'store']);
+
+//Route::get('/product', \App\Http\Livewire\Admin\Product\Index::class)->name('product.index');
+Route::get('/pelanggan', \App\Http\Livewire\Admin\Pelanggan\Index::class)->name('pelanggan.index');
+// Route::resource('kesenian', KesenianController::class);
+
 // Route::get('/', function () {
 //     return view('kesenian/index');
 // });

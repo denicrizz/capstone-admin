@@ -9,4 +9,8 @@ class Kesenian extends Model
 {
     use HasFactory;
     protected $table = "kesenian";
+    protected $primaryKey = "idkesenian";
+
+    public $incrementing = false;
+    public $timestamps = true;
 }
