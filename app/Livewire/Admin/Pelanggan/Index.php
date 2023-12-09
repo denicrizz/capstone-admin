@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Admin\Pelanggan;
 
 use Livewire\Component;
 
-class Pelanggan extends Component
+class Index extends Component
 {
     public function render()
     {

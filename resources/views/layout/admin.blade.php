@@ -249,7 +249,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{{ url('admin/home')}}">
+        <a class="nav-link " href="{{ url('/')}}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -261,7 +261,7 @@
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-                <a href="{{ url('livewire.admin.pelanggan.index') }}">
+                <a href="{{ route('pelanggan.index') }}">
                 <i class="bi bi-circle"></i><span>Data Pelanggan</span>
                 </a>
             </li>

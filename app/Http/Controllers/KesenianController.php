@@ -14,10 +14,17 @@ class KesenianController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view ('admin.kesenian.create');
+    }
+
     public function store(Request $request){
+        // dd($request->all());
 
-        Kesenian::create($request->except([ 'submit']));
+        Kesenian::create($request->all());
 
-        return redirect ('admin.kesenian.create');
+        return redirect()->route('kesenian.index')->with('success', 'Data Kesenian Berhasil Ditambahkan');
+
     }
 }

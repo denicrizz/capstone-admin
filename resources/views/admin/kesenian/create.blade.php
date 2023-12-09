@@ -4,7 +4,8 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Tambah Data Kesenian</h5>
-                <form method="POST" action="{{ url('kesenian/store') }}">
+                <form method="POST" action="{{ route('kesenian.store') }}">
+                    @csrf
                     <div class="row mb-3">
                         <label for="idkesenian" class="col-sm-2 col-form-label">Id Kesenian</label>
                         <div class="col-sm-10">
@@ -15,10 +16,10 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="name" class="col-sm-2 col-form-label">Nama Kesenian</label>
+                        <label for="nama" class="col-sm-2 col-form-label">Nama Kesenian</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name">
-                            @error('name')
+                            <input type="text" class="form-control" id="nama" name="nama">
+                            @error('nama')
                                 <span class="danger text-red-500">{{ $message }}</span>
                             @enderror
                         </div>

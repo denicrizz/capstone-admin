@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KesenianController;
-use App\Http\Livewire\Admin\pelanggan\Pelanggan;
+use App\Http\Controllers\PelangganController;
+// use App\Http\Livewire\Admin\Pelanggan\Pelanggan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,20 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', [HomeController::class, 'index']);
 
-// Routing Route::get('/client', \App\Http\Livewire\Admin\Client\Index::class)->name('client.index');
-Route::get('admin/home', [HomeController::class, 'index']);
-
+// Kesenian
 Route::get('kesenian/', [KesenianController::class, 'index']);
-Route::get('kesenian/create', [KesenianController::class, 'store']);
+Route::resource('kesenian', KesenianController::class);
 
-//Route::get('/product', \App\Http\Livewire\Admin\Product\Index::class)->name('product.index');
-Route::get('/pelanggan', \App\Http\Livewire\Admin\Pelanggan\Index::class)->name('pelanggan.index');
-// Route::resource('kesenian', KesenianController::class);
+// Pelanggan Route::get('/product', \App\Http\Livewire\Admin\Product\Index::class)->name('product.index');
+// Route::get('/pelanggan', \App\Livewire\Admin\Pelanggan\Index::class)->name('pelanggan');
 
-// Route::get('/', function () {
-//     return view('kesenian/index');
-// });
+Route::resource('pelanggan', PelangganController::class);
