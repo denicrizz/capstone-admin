@@ -36,8 +36,13 @@
                     <td>{{ $row->notelp }}</td>
                     <td>{{ $row->email }}</td>
                     <td> <div class="pt-2">
-                        <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-pencil"></i></a>|
-                        <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                        <a href="{{ route('kesenian.show', $row->id) }}" class="btn btn-warning btn-sm" title="Detil"><i class="bi bi-book"></i></a>|
+                        <a href="{{ route('kesenian.edit', $row->id) }}" class="btn btn-primary btn-sm" title="Edit"><i class="bi bi-pencil"></i></a>|
+                        <form action="{{ route('kesenian.destroy', $row->id) }}" method="POST" type="button"  class="btn btn-danger btn-sm p-0" onsubmit="return confirm ('Apakah Anda yakin ingin menghapus data kesenian?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm m-0" title="Hapus"><i class="bi bi-trash"></i></button>
+                        </form>
                       </div>
                     </td>
                 </tr>

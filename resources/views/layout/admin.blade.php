@@ -270,11 +270,11 @@
                 <i class="bi bi-circle"></i><span>Data Kesenian</span>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="components-badges.html">
                 <i class="bi bi-circle"></i><span>Data User</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
       </li><!-- End Forms Nav -->
 

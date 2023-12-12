@@ -40,7 +40,9 @@ class PelangganController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pelanggan = Pelanggan::findOrFail($id);
+
+        return view('admin.pelanggan.show', compact('pelanggan'));
     }
 
     /**
@@ -48,7 +50,9 @@ class PelangganController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pelanggan = Pelanggan::findOrFail($id);
+
+        return view('admin.pelanggan.edit', compact('pelanggan'));
     }
 
     /**
@@ -56,7 +60,10 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $pelanggan = Pelanggan::findOrFail($id);
+
+        $pelanggan->update($request->all());
+        return redirect()->route('pelanggan.index')->with('success', 'Data Pelanggan Berhasil Diedit');
     }
 
     /**
@@ -64,6 +71,9 @@ class PelangganController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pelanggan = Pelanggan::findOrFail($id);
+
+        $pelanggan->delete();
+        return redirect()->route('pelanggan.index')->with('success', 'Data Pelanggan Berhasil Dihapus');
     }
 }

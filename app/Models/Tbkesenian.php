@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kesenian extends Model
+class Tbkesenian extends Model
 {
     use HasFactory;
-    protected $table = "kesenian";
+    protected $table = "tbkesenians";
+
     protected $fillable = [
-        'idkesenian',
         'nama',
         'alamat',
         'catatan',
@@ -19,6 +19,5 @@ class Kesenian extends Model
         'email',
     ];
 
-    // public $incrementing = false;
-    // public $timestamps = true;
+
 }

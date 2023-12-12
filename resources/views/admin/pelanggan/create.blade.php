@@ -3,7 +3,7 @@
        <div class="col-lg-12">
            <div class="card">
              <div class="card-body">
-               <h5 class="card-title">Tambah Data Kesenian</h5>
+               <h5 class="card-title">Tambah Data Pelanggan</h5>
                <form method="POST" action="{{ route('pelanggan.store') }}">
                    @csrf
                    <div class="row mb-3">

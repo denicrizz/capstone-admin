@@ -7,15 +7,6 @@
                 <form method="POST" action="{{ route('kesenian.store') }}">
                     @csrf
                     <div class="row mb-3">
-                        <label for="idkesenian" class="col-sm-2 col-form-label">Id Kesenian</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="idkesenian" name="idkesenian">
-                            @error('idkesenian')
-                                <span class="danger text-red-500">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="row mb-3">
                         <label for="nama" class="col-sm-2 col-form-label">Nama Kesenian</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="nama" name="nama">
