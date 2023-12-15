@@ -16,4 +16,9 @@ class Pelanggan extends Model
         'notlp',
         'email',
     ];
+
+    public function penyewaan()
+    {
+        return $this->hasMany(Penyewaan::class);
+    }
 }

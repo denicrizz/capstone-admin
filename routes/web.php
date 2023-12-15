@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KesenianController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PenyewaanController;
 use App\Http\Controllers\TbkesenianController;
 // use App\Http\Livewire\Admin\Pelanggan\Pelanggan;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +25,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('kesenian/', [TbkesenianController::class, 'index']);
 Route::resource('kesenian', TbkesenianController::class);
 
-// Pelanggan Route::get('/product', \App\Http\Livewire\Admin\Product\Index::class)->name('product.index');
-// Route::get('/pelanggan', \App\Livewire\Admin\Pelanggan\Index::class)->name('pelanggan');
-
+// Pelanggan
 Route::resource('pelanggan', PelangganController::class);
+
+//Penyewaan
+Route::resource('penyewaan', PenyewaanController::class);
+
+//Login
+Route::get('login', function () {
+    return view('admin.login');
+});

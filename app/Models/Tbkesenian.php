@@ -19,5 +19,10 @@ class Tbkesenian extends Model
         'email',
     ];
 
+    public function penyewaan()
+    {
+        return $this->hasMany(Penyewaan::class);
+    }
+
 
 }
