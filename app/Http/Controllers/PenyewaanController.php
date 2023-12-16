@@ -54,7 +54,11 @@ class PenyewaanController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $penyewaan = Penyewaan::with('pelanggan', 'tbkesenian')->findOrFail($id);
+        // $pelanggan = Pelanggan::all();
+        // $tbkesenian = Tbkesenian::all();
+
+        return view('admin.penyewaan.show', compact('penyewaan'));
     }
 
     /**
@@ -62,7 +66,18 @@ class PenyewaanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //  mendapatkan data penyewaan
+        $penyewaan = Penyewaan::find($id);
+
+        //mendapatkan data yang ditampilkan secara dropdown
+        $pelanggan = Pelanggan::all();
+        $tbkesenian = Tbkesenian::all();
+
+
+        // $dateFormatted = $penyewaan->tanggalpenyewaan->format('Y-m-d');
+
+
+        return view('admin.penyewaan.edit', compact('penyewaan', 'pelanggan', 'tbkesenian'));
     }
 
     /**
@@ -70,7 +85,14 @@ class PenyewaanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'status' => 'required|in:pending,completed,canceled', // Sesuaikan opsi yang diperbolehkan
+        ]);
+
+        $penyewaan = Penyewaan::findOrFail($id);
+
+        $penyewaan->update($request->all());
+        return redirect()->route('penyewaan.index')->with('success', 'Data Penyewaan Berhasil Diedit');
     }
 
     /**
@@ -78,6 +100,9 @@ class PenyewaanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $penyewaan = Penyewaan::findOrFail($id);
+
+        $penyewaan->delete();
+        return redirect()->route('penyewaan.index')->with('success', 'Data penyewaan Berhasil Dihapus');
     }
 }

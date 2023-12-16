@@ -3,18 +3,11 @@
        <div class="col-lg-12">
            <div class="card">
              <div class="card-body">
-               <h5 class="card-title">Tambah Data Penyewaan</h5>
-               <form method="POST" action="{{ route('penyewaan.store') }}">
-                   @csrf
+               <h5 class="card-title">Detil Data Penyewaan</h5>
                     <div class="row mb-3">
                         <label for="pelanggan_id" class="col-sm-2 col-form-label">Nama Penyewa</label>
                         <div class="col-sm-10">
-                            <select class="form-select" aria-label="Default select example" id="pelanggan_id" name="pelanggan_id">
-                                @foreach ($pelanggan as $pelanggans)
-                                    <option selected>Pilih Pelanggan</option>
-                                    <option value="{{ $pelanggans->id }}">{{ $pelanggans->nama }}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $penyewaan->pelanggan->nama }}" readonly>
                             @error('pelanggan_id')
                             <span class="danger text-red-500">{{ $message }}</span>
                             @enderror
@@ -23,12 +16,7 @@
                     <div class="row mb-3">
                         <label for="tbkesenian_id" class="col-sm-2 col-form-label">Nama Kesenian</label>
                         <div class="col-sm-10">
-                            <select class="form-select" aria-label="Default select example" id="tbkesenian_id" name="tbkesenian_id">
-                                @foreach ($tbkesenian as $tbkesenians)
-                                    <option selected>Pilih Pelanggan</option>
-                                    <option value="{{ $tbkesenians->id }}">{{ $tbkesenians->nama }}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $penyewaan->tbkesenian->nama }}" readonly>
                             @error('tbkesenian_id')
                             <span class="danger text-red-500">{{ $message }}</span>
                             @enderror
@@ -37,10 +25,10 @@
                     <div class="row mb-3">
                         <label for="keterangan" class="col-sm-2 col-form-label">Keterangan</label>
                         <div class="col-sm-10">
-                          <textarea type="text" name="keterangan" id="keterangan" class="form-control" style="height: 100px"></textarea>
+                          <textarea type="text" name="keterangan" id="keterangan" class="form-control" style="height: 100px" readonly>{{ $penyewaan->keterangan }}"</textarea>
                         </div>
                       </div>
-                   <div class="row mb-3">
+                   {{-- <div class="row mb-3">
                         <label for="tanggalpenyewaan" class="col-sm-2 col-form-label">Tanggal Penyewaan</label>
                         <div class="col-sm-10">
                             <input type="date" class="form-control" id="tanggalmulai" name="tanggalmulai">
@@ -48,16 +36,11 @@
                                 <span class="danger text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row mb-3">
                         <label for="tbkesenian_id" class="col-sm-2 col-form-label">Nama Kesenian</label>
                         <div class="col-sm-10">
-                            <select class="form-select" aria-label="Default select example" id="status" name="status">
-                                    <option selected>Status</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="canceled">Canceled</option>
-                            </select>
+                            <input type="text" class="form-control" id="status" name="status" value="{{ $penyewaan->status }}" readonly>
                             @error('status')
                             <span class="danger text-red-500">{{ $message }}</span>
                             @enderror
@@ -66,19 +49,12 @@
                     <div class="row mb-3">
                         <label for="total" class="col-sm-2 col-form-label">Total</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="total" name="total">
+                            <input type="text" class="form-control" id="total" name="total" value="{{ $penyewaan->total }}" readonly>
                             @error('total')
                                 <span class="danger text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
-                   <div class="row mb-3">
-                       <label class="col-sm-2 col-form-label"></label>
-                       <div class="col-sm-10">
-                         <button type="submit" class="btn btn-primary">Simpan</button>
-                       </div>
-                   </div>
-               </form>
              </div>
            </div>
        </div>
