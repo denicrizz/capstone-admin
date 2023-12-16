@@ -42,7 +42,7 @@
               <i class="bi bi-circle"></i><span>Data Penyewaan</span>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="tables-data.html">
               <i class="bi bi-circle"></i><span>Data Pengembalian</span>
             </a>
@@ -51,7 +51,7 @@
             <a href="tables-data.html">
               <i class="bi bi-circle"></i><span>Riwayat</span>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </li><!-- End Tables Nav -->
 
@@ -61,7 +61,7 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Profile</span>
             </a>
           </li>

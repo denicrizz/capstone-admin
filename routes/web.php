@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KesenianController;
 use App\Http\Controllers\PelangganController;
@@ -31,7 +32,18 @@ Route::resource('pelanggan', PelangganController::class);
 //Penyewaan
 Route::resource('penyewaan', PenyewaanController::class);
 
-//Login
-Route::get('login', function () {
-    return view('admin.login');
+//Login Dan Register
+// Route::get('login', function () {
+//     return view('login');
+// });
+
+Route::group(['middleware' => 'guest'], function() {
+    Route::get('/register', [AuthController::class, 'register'])->name(('register'));
+    Route::post('/register', [AuthController::class, 'registerPost'])->name(('register'));
+    Route::get('/login', [AuthController::class, 'login'])->name(('login'));
+    Route::post('/login', [AuthController::class, 'loginPost'])->name(('login'));
 });
+
+// Route::get('register', function () {
+//     return view('register');
+// });

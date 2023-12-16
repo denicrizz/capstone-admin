@@ -41,7 +41,7 @@
                         </div>
                       </div>
                    <div class="row mb-3">
-                        <label for="tanggalmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                        <label for="tanggalpenyewaan" class="col-sm-2 col-form-label">Tanggal Penyewaan</label>
                         <div class="col-sm-10">
                             <input type="date" class="form-control" id="tanggalmulai" name="tanggalmulai">
                             @error('tanggalmulai')
@@ -50,11 +50,16 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="tanggalselesai" class="col-sm-2 col-form-label">Tanggal Selesai</label>
+                        <label for="tbkesenian_id" class="col-sm-2 col-form-label">Nama Kesenian</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="tanggalselesai" name="tanggalselesai">
-                            @error('tanggalselesai')
-                                <span class="danger text-red-500">{{ $message }}</span>
+                            <select class="form-select" aria-label="Default select example" id="status" name="status">
+                                    <option selected>Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="canceled">Canceled</option>
+                            </select>
+                            @error('status')
+                            <span class="danger text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>

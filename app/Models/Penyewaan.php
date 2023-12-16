@@ -15,8 +15,8 @@ class Penyewaan extends Model
         'tbkesenian_id',
         'total',
         'keterangan',
-        'tanggalmulai',
-        'tanggalselesai',
+        'tanggalpenyewaan' => 'datetime',
+        'status',
     ];
 
     public function pelanggan()
